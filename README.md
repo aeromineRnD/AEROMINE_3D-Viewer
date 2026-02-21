@@ -147,7 +147,7 @@ https://aeromine-3d-viewer.vercel.app/#model=https://example.com/part.glb&kiosk
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT © 2026 AEROMINE — see [LICENSE](LICENSE) for details.
 
 ---
 
