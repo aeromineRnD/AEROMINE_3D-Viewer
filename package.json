@@ -1,0 +1,24 @@
+{
+	"private": true,
+	"version": "1.0.0",
+	"name": "aeromine-3d-viewer",
+	"description": "AEROMINE 3D Viewer - Preview glTF models using three.js and a drag-and-drop interface.",
+	"author": "AEROMINE",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite --port 3000",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"dat.gui": "^0.7.9",
+		"gltf-validator": "^2.0.0-dev.3.10",
+		"query-string": "^8.1.0",
+		"simple-dropzone": "^0.8.3",
+		"three": "^0.176.0",
+		"vhtml": "^2.2.0"
+	},
+	"devDependencies": {
+		"vite": "^5.1.8"
+	}
+}

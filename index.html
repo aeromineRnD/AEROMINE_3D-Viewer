@@ -1,0 +1,107 @@
+<!doctype html>
+<html data-theme="light">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>3D Model Viewer</title>
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	/>
+	<meta name="author" content="AEROMINE" />
+	<meta name="description" content="AEROMINE 3D Viewer - Drag-and-drop preview tool for glTF 2.0 3D models." />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400&display=swap" rel="stylesheet" />
+	<script defer type="module" src="src/app.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header-top">
+			<h1><a href="/">3D Model Viewer</a></h1>
+			<div class="header-toolbar">
+				<button class="toolbar-btn" id="measure-btn" title="Measure distance">
+					<svg viewBox="0 0 24 24">
+						<path d="M21 3L3 21M21 3v6M21 3h-6M3 21v-6M3 21h6M12 7.5l1 1M9 10.5l1 1M6 13.5l1 1"/>
+					</svg>
+				</button>
+				<button class="toolbar-btn" id="volume-btn" title="Calculate volume">
+					<svg viewBox="0 0 24 24">
+						<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+						<polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+						<line x1="12" y1="22.08" x2="12" y2="12"/>
+					</svg>
+				</button>
+				</div>
+		</div>
+
+		<div class="header-hints">
+			<span class="hint-pill">
+				<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+					<rect x="7" y="2" width="10" height="16" rx="5"/>
+					<line x1="7" y1="8" x2="12" y2="8"/>
+					<line x1="12" y1="2" x2="12" y2="8"/>
+				</svg>
+				Left Click + Drag: Rotate
+			</span>
+			<span class="hint-pill">
+				<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+					<rect x="7" y="2" width="10" height="16" rx="5"/>
+					<line x1="12" y1="8" x2="17" y2="8"/>
+					<line x1="12" y1="2" x2="12" y2="8"/>
+				</svg>
+				Right Click + Drag: Pan
+			</span>
+			<span class="hint-pill">
+				<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="11" cy="11" r="7"/>
+					<line x1="16.5" y1="16.5" x2="21" y2="21"/>
+					<line x1="11" y1="8" x2="11" y2="14"/>
+					<line x1="8" y1="11" x2="14" y2="11"/>
+				</svg>
+				Scroll: Zoom
+			</span>
+		</div>
+
+		<div class="header-controls">
+			<button class="ctrl-btn" id="auto-rotate-btn">Auto Rotate: Off</button>
+			<button class="ctrl-btn" id="grid-btn">Grid: Off</button>
+			<div class="ctrl-bg-wrap">
+				<span class="ctrl-label">Background</span>
+				<select id="bg-color-select">
+					<option value="#f0f2f5" selected>Light</option>
+					<option value="#5B21B6">Purple</option>
+					<option value="#1a1a2e">Dark</option>
+					<option value="#000000">Black</option>
+					<option value="#1e3a5f">Navy</option>
+					<option value="#0f3d2e">Forest</option>
+				</select>
+			</div>
+		</div>
+	</header>
+	<main class="wrap">
+		<div class="dropzone">
+			<div class="placeholder">
+				<p>Drag glTF 2.0 file or folder here</p>
+			</div>
+			<div class="upload-btn">
+				<input type="file" name="file-input[]" id="file-input" multiple="" />
+				<label for="file-input">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="17"
+						viewBox="0 0 20 17"
+					>
+						<path
+							d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"
+						></path>
+					</svg>
+					<span>Choose file</span>
+				</label>
+			</div>
+		</div>
+		<div class="spinner"></div>
+	</main>
+</body>
+</html>
